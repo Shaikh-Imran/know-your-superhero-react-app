@@ -6,8 +6,8 @@ export default function HeroCard({ heroData, isHome = false }) {
   return (
     <Card bg="secondary" text="white">
       <Card.Img variant="top" src={heroData.images.lg} />
-      <Card.Body>
-        <Card.Title className="text-center text-decoration-none">
+      <Card.Body className="p-0 shadow-lg rounded">
+        <Card.Title className="text-center text-decoration-none m-0">
           {isHome === true && (
             <Link to={"/superhero/" + heroData.id} className="herolink">
               <h4>{heroData.name} </h4>

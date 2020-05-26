@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col, Card } from "react-bootstrap";
+import { Row, Col, Card, Badge, Table } from "react-bootstrap";
 import HeroCard from "./HeroCard";
 
 export default class HeroInfo extends Component {
@@ -24,12 +24,24 @@ export default class HeroInfo extends Component {
     return (
       <Card bg="secondary" className="text-white">
         <Card.Header>
-          <h4>Biography</h4>
+          <h3>Biography</h3>
         </Card.Header>
-        <Card.Body>Hello</Card.Body>
+        <Card.Body>
+          <Table striped className="text-white">
+            <tbody>
+              {Object.keys(biography).map((value, key) => (
+                <tr>
+                  <td>{value.replace(/([a-z])([A-Z])/g, "$1 $2")}</td>
+                  <td>{biography[value]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </Card.Body>
       </Card>
     );
   };
+
   render() {
     if (this.state.loading) {
       return (
@@ -38,7 +50,7 @@ export default class HeroInfo extends Component {
     }
     return (
       <>
-        <Row className="align-center mt-2  ">
+        <Row className="align-center mt-2 ">
           <Col sm={12} md={4} lg={3}>
             <HeroCard heroData={this.state.heroData} />
           </Col>
