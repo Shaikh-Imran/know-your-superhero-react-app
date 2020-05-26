@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import HeroCard from "./component/HeroCard";
+import { Row, Col, Container } from "react-bootstrap";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  state = {
+    heroes: [],
+  };
+  componentWillMount() {
+    fetch("https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/all.json")
+      .then((res) => res.json())
+      .then((heroes) => this.setState({ heroes: heroes }));
+  }
+
+  render() {
+    // console.log(this.state.heroes.map((hero) => hero.images.sm));
+    return (
+      <Container>
+        <Row className="align-center">
+          {this.state.heroes.map((hero) => (
+            <Col sm={6} md={4} lg={3} className="my-3" key={hero.id}>
+              <HeroCard heroData={hero} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
+    );
+  }
 }
-
-export default App;
