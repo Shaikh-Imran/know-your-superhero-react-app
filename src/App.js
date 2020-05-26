@@ -1,29 +1,22 @@
 import React, { Component } from "react";
-import HeroCard from "./component/HeroCard";
-import { Row, Col, Container } from "react-bootstrap";
+import AppNavbar from "./component/AppNavbar";
+import { Switch, Route } from "react-router";
+import Home from "./component/Home";
+import HeroInfo from "./component/HeroInfo";
+import { Container } from "react-bootstrap";
 
 export default class App extends Component {
-  state = {
-    heroes: [],
-  };
-  componentWillMount() {
-    fetch("https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/all.json")
-      .then((res) => res.json())
-      .then((heroes) => this.setState({ heroes: heroes }));
-  }
-
   render() {
-    // console.log(this.state.heroes.map((hero) => hero.images.sm));
     return (
-      <Container>
-        <Row className="align-center">
-          {this.state.heroes.map((hero) => (
-            <Col sm={6} md={4} lg={3} className="my-3" key={hero.id}>
-              <HeroCard heroData={hero} />
-            </Col>
-          ))}
-        </Row>
-      </Container>
+      <>
+        <AppNavbar />
+        <Container>
+          <Switch>
+            <Route path="/" exact render={() => <Home isHome={true} />} />
+            <Route path="/superhero/:id" exact component={HeroInfo} />
+          </Switch>
+        </Container>
+      </>
     );
   }
 }
