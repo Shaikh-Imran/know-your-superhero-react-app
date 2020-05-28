@@ -9,8 +9,9 @@ export default class App extends Component {
   render() {
     return (
       <>
-        <AppNavbar />
         <Container>
+          <AppNavbar />
+
           <Switch>
             <Route path="/" exact render={() => <Home isHome={true} />} />
             <Route path="/superhero/:id" exact component={HeroInfo} />
