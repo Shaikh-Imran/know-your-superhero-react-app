@@ -45,9 +45,11 @@ export default class HeroInfo extends Component {
             <Col sm={12} lg={6}>
               <Table striped className="mt-2 text-white">
                 <thead>
-                  <th colSpan={2} className="text-center text-white">
-                    Power Stats
-                  </th>
+                  <tr>
+                    <th colSpan={2} className="text-center text-white">
+                      Power Stats
+                    </th>
+                  </tr>
                 </thead>
                 <tbody>
                   {Object.keys(powerstats).map((value, key) => (

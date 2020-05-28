@@ -9,7 +9,7 @@ export default class App extends Component {
   render() {
     return (
       <>
-        <Container>
+        <Container className="m-auto p-0">
           <AppNavbar />
 
           <Switch>

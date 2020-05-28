@@ -1,9 +1,11 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Navbar, Nav, Badge, NavLink, Button } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
+import logo from "../images/logo.png";
 
 export default function AppNavbar() {
   const location = useLocation();
+  console.log(location);
   return (
     <>
       <Navbar
@@ -15,7 +17,7 @@ export default function AppNavbar() {
       >
         <Navbar.Brand as={Link} to="/" className="p-1 m-0">
           <img
-            src="/logo.png"
+            src={logo}
             width="40px"
             height="40px"
             alt="Logo"
@@ -25,10 +27,12 @@ export default function AppNavbar() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="text-center p-auto">
-          <Nav className="m-auto" activeKey={location.pathname}>
-            <Nav.Link href="/">
-              <h4>Home</h4>
-            </Nav.Link>
+          <Nav variant="pills" className="m-auto" activeKey={location.pathname}>
+            <Nav.Item>
+              <Nav.Link as={Link} to="/" href="/">
+                <h4>All</h4>
+              </Nav.Link>
+            </Nav.Item>
             <Nav.Link href="https://www.CodersTea.com/">
               <h4>CodersTea.com</h4>
             </Nav.Link>
