@@ -4,5 +4,5 @@ Know all about your super hero. Search the superhero. All the info about your fa
 
 ![home](resource/kys-homepage.JPG)
 ![batman](resource/kys-batman.JPG)
-![black Panther](resource/kys-blackpanther.JPG)
+![black Panther](resource/kys-blackpanter.JPG)
 ![home](resource/kys-home.JPG)
