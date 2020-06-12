@@ -1,6 +1,6 @@
-# Know your Super Hero React App by CodersTea.com
+# Know Superheroes and Supervillains React App by CodersTea.com
 
-Know all about your super hero. Search the superhero. All the info about your favorite superhero such as real name, work profession, aliases, connections or with whom he/she has worked with.
+Know all about Superheroes and Supervillains, such as real name, work profession, aliases, connections or with whom he/she has worked with.
 
   
 
