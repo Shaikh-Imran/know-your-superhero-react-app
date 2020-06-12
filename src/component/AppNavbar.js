@@ -5,7 +5,6 @@ import logo from "../images/logo.png";
 
 export default function AppNavbar() {
   const location = useLocation();
-  console.log(location);
   return (
     <>
       <Navbar

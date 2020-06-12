@@ -11,7 +11,7 @@ export default class HeroInfo extends Component {
 
   componentDidMount() {
     fetch(
-      `https://akabab.github.io/superhero-api/api/id/${this.state.heroId}.json`
+      `https://raw.githubusercontent.com/Shaikh-Imran/superhero-api/master/api/hero-ids/${this.state.heroId}.json`
     )
       .then((res) => res.json())
       .then((heroData) =>

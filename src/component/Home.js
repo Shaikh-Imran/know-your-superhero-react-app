@@ -11,7 +11,9 @@ export default class Home extends Component {
   };
 
   componentDidMount() {
-    fetch("https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/all.json")
+    fetch(
+      "https://raw.githubusercontent.com/Shaikh-Imran/superhero-api/master/api/all-min.json"
+    )
       .then((res) => res.json())
       .then((heroes) => this.setState({ allHeroes: heroes, isLoading: false }));
   }
@@ -55,7 +57,7 @@ export default class Home extends Component {
             </div>
           </form>
           <Row className="align-center my-2">
-            {this.state.searchedHeroes.map((hero, index) => (
+            {this.state.searchedHeroes.map((hero) => (
               <Col sm={6} md={4} lg={3} className="my-3" key={hero.id}>
                 <HeroCard heroData={hero} isHome={this.props.isHome} />
               </Col>
