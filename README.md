@@ -5,10 +5,10 @@ Know all about Superheroes and Supervillains, such as real name, work profession
   
 
 You can get the full experience on 
-[CodersTea]("https://www.coderstea.com/tools/").
+[CodersTea](https://www.coderstea.com/tools/).
 
 ## Credit
-Thanks to [Yoann Cribier]("https://github.com/akabab")  for [Super Hero API]("https://akabab.github.io/superhero-api/api/").
+Thanks to [Yoann Cribier](https://github.com/akabab)  for [Super Hero API](https://akabab.github.io/superhero-api/api/).
 
 ## Sample 
 
